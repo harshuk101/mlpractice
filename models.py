@@ -7,16 +7,12 @@ import copy
 
 
 # https://arxiv.org/pdf/1706.03762v7.pdf
+# https://www.youtube.com/watch?v=ISNdQcPhsts
 class Transformer(nn.Module):
     def __init__(self,  num_encoder_layers:int = 6):
         super().__init__()
 
-        self.FFLayers = 
-
-
-class Encoder(nn.Module):
-
-
+        self.FFLayers = None
 
 
 class MultiHeadAttention(nn.Module):
@@ -30,7 +26,9 @@ class MultiHeadAttention(nn.Module):
         self.v = nn.Linear(len_embedding, len_embedding, biase=False)
 
     def forward(self, queries, key, values):
-        queries = self.
+        ## ToDo
+        return None
 
 
     def attention(self, input):
+        return None
