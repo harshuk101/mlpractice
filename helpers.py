@@ -24,8 +24,7 @@ class InputEmbeddings(nn.Module):
     
 
 '''
-Gives position of the token within the input text.
-d_model here is the same as the length of the embedding vector in InputEmbeddings
+Creates an encoding for each word within the input text representing the position
 '''
 class PositionalEncoding(nn.Module):
 
@@ -44,7 +43,13 @@ class PositionalEncoding(nn.Module):
         # encoding information to the entire vector
         positional_encoding = torch.zero(seq_len, d_model)
 
+        # Create a vector of shape (seq_len, 1) representing position of word in sentence
+        position = torch.arange(0, seq_len, dtype=torch.float).unsqueeze(1) # unsqueeze just adds another dimension
+        divisor = torch.exp(torch.arange(0, d_model, 2))
+
         '''
-            We apply a different encoding based on if the position is odd or even.
+            ToDo: Better understand the reasoning of the below
+            We apply a different encoding for each item of the word embedding vector based
+              based on if the position is odd or even (not the position within the sentence!)
             Use a log function instead of original sin/cos for numerical stability
         '''
