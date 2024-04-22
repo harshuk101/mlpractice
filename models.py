@@ -8,6 +8,7 @@ import copy
 
 # https://arxiv.org/pdf/1706.03762v7.pdf
 # https://www.youtube.com/watch?v=ISNdQcPhsts
+# https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial6/Transformers_and_MHAttention.html
 class Transformer(nn.Module):
     def __init__(self,  num_encoder_layers:int = 6):
         super().__init__()
